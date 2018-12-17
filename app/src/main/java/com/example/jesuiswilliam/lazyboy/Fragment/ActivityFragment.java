@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -37,10 +38,12 @@ public class ActivityFragment extends Fragment {
         linear_Activity = (LinearLayout)view.findViewById(R.id.linear_Activity);
         con_Activity = (ConstraintLayout)view.findViewById(R.id.mConstraintLayout_Activity);
 
+
+
         //從系統找到另一個xml格式來載到畫面當中
         LayoutInflater inflater2 = (LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         //讀取的card
-        view2 = inflater2.inflate(R.layout.layout_item_demo , null, true);
+        view2 = inflater2.inflate(R.layout.card , null, true);
 
         //自定義圖片
         i =  view2.findViewById(R.id.cardlayout_imageView);
