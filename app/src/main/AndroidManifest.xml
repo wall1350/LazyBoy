@@ -20,6 +20,9 @@
         <activity
             android:label="Test"
             android:name=".Test"/>
+        <activity
+            android:label="OutfitRelax"
+            android:name=".OutfitRelax"/>
     </application>
 
 </manifest>

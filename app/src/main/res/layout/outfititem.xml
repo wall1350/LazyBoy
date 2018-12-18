@@ -6,52 +6,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:background="@drawable/relax"
+    <ImageButton
+        android:id="@+id/btnJacket"
+        android:layout_width="450dp"
+        android:layout_height="75dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/jacket"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:background="@drawable/job"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:background="@drawable/street"
+    <ImageButton
+        android:id="@+id/btnUpper"
+        android:layout_width="450dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/upper"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845" />
+        app:layout_constraintTop_toBottomOf="@+id/btnJacket"
+        app:layout_constraintVertical_bias="0.016" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:background="@drawable/gen"
+    <ImageButton
+        android:id="@+id/btnLower"
+        android:layout_width="450dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/lower"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btnUpper"
+        app:layout_constraintVertical_bias="0.03" />
 
+    <ImageButton
+        android:id="@+id/btnBag"
+        android:layout_width="450dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/bag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLower"
+        app:layout_constraintVertical_bias="0.028" />
+
+    <ImageButton
+        android:id="@+id/btnItem"
+        android:layout_width="450dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBag"
+        app:layout_constraintVertical_bias="0.151" />
 </android.support.constraint.ConstraintLayout>
