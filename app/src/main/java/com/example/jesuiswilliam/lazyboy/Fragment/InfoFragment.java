@@ -42,8 +42,7 @@ public class InfoFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.info, null);
-        //linear_Info = (LinearLayout)view.findViewById(R.id.linear_Info);
-        //con_Info = (ConstraintLayout)view.findViewById(R.id.mConstraintLayout_Info);
+
         pageList = new ArrayList<>();
         pageList.add(new HotInfo(getContext()));
         pageList.add(new LatestInfo(getContext()));
@@ -59,43 +58,6 @@ public class InfoFragment extends Fragment {
 
         myTablayout.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(myTablayout));
-
-
-        //從系統找到另一個xml格式來載到畫面當中
-        //LayoutInflater inflater2 = (LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //讀取的card
-        //view2 = inflater2.inflate(R.layout.card , null, true);
-        //view3 = inflater2.inflate(R.layout.card , null, true);
-
-        //自定義圖片
-        //i =  view2.findViewById(R.id.cardlayout_imageView);
-        //i.setImageResource(R.drawable.icon_menu2);
-        //自定義按鈕事件
-        //b = view2.findViewById(R.id.cardlayout_button);
-//        b.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //i.setImageResource(R.drawable.icon_menu3);
-//                Intent intent = new Intent();
-//                intent.setClass(getActivity(),Test.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        //自定義圖片
-//        i =  view3.findViewById(R.id.cardlayout_imageView);
-//        i.setImageResource(R.drawable.icon_menu3);
-//        //自定義按鈕事件
-//        b = view3.findViewById(R.id.cardlayout_button);
-//        b.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //i.setImageResource(R.drawable.icon_menu3);
-//                Intent intent = new Intent();
-//                intent.setClass(getActivity(),Test.class);
-//                startActivity(intent);
-//            }
-//        });
 
         return view;
     }

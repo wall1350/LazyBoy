@@ -4,6 +4,6 @@
     <color name="textcolorPrimary">#2A2A30</color>
     <color name="colorPrimaryDark">#3C3431</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="BottomNevigationBarBrown">#3C3431</color>
-    <color name="BottomNevigationBarYellow">#F4A936</color>
+    <color name="BottomNevigationBarBrown">#3c3431</color>
+    <color name="BottomNevigationBarYellow">#f4a936</color>
 </resources>

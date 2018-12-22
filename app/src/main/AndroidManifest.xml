@@ -23,6 +23,10 @@
         <activity
             android:label="OutfitRelax"
             android:name=".OutfitRelax"/>
+        <activity
+            android:label="Webview_Vc"
+            android:name=".Webview_Vc"/>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
