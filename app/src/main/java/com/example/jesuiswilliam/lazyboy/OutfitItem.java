@@ -22,7 +22,7 @@ public class OutfitItem extends PageView {
 
 
                 Intent intent = new Intent();
-                intent.setClass(context,Test.class);
+                intent.setClass(context,OutfitJacket.class);
                 context.startActivity(intent);
             }
         });

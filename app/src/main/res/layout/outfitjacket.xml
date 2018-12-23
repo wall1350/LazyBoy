@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <ImageButton
+            android:id="@+id/imgJacket5"
+            android:layout_width="123dp"
+            android:layout_height="153dp"
+            android:layout_marginEnd="143dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/outfit_item5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.303"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.983" />
+
+        <ImageButton
+            android:id="@+id/imgJacket4"
+            android:layout_width="125dp"
+            android:layout_height="153dp"
+            android:layout_marginBottom="88dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/outfit_item4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.91"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.662" />
+
+        <ImageButton
+            android:id="@+id/imgJacket3"
+            android:layout_width="124dp"
+            android:layout_height="155dp"
+            android:layout_marginBottom="88dp"
+            android:layout_marginEnd="143dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/outfit_item3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.306"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.059" />
+
+        <ImageButton
+            android:id="@+id/imgJacket2"
+            android:layout_width="125dp"
+            android:layout_height="153dp"
+            android:layout_marginBottom="88dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/outfit_item2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.91"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.059" />
+
+        <ImageButton
+            android:id="@+id/imgJacket1"
+            android:layout_width="123dp"
+            android:layout_height="153dp"
+            android:layout_marginBottom="88dp"
+            android:layout_marginEnd="143dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/outfit_item1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.303"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.662" />
+    </android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>
