@@ -35,7 +35,7 @@
             app:layout_constraintHorizontal_bias="0.106"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.241" />
 
         <ImageButton
             android:id="@+id/btnGen"
@@ -47,7 +47,7 @@
             app:layout_constraintHorizontal_bias="0.525"
             app:layout_constraintStart_toEndOf="@+id/btnRelax"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.241" />
 
         <ImageButton
             android:id="@+id/btnStreet"
