@@ -2,46 +2,58 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jesuiswilliam.lazyboy">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:label="Test"
-            android:name=".Test"/>
+            android:name=".Test"
+            android:label="Test" />
         <activity
-            android:label="OutfitRelax"
-            android:name=".OutfitRelax"/>
+            android:name=".OutfitRelax"
+            android:label="OutfitRelax" />
         <activity
-            android:label="Webview_Vc"
-            android:name=".Webview_Vc"/>
+            android:name=".Webview_Vc"
+            android:label="Webview_Vc" />
         <activity
-            android:label="ClothingWeb"
-            android:name=".ClothingWeb"/>
+            android:name=".ClothingWeb"
+            android:label="ClothingWeb" />
         <activity
-            android:label="ImgOutfitRelax"
-            android:name=".ImgOutfitRelax"/>
+            android:name=".ImgOutfitRelax"
+            android:label="ImgOutfitRelax" />
         <activity
-            android:label="OutfitJacket"
-            android:name=".OutfitJacket"/>
+            android:name=".OutfitJacket"
+            android:label="OutfitJacket" />
         <activity
-            android:label="OutfitMoreJacket"
-            android:name=".OutfitMoreJacket"/>
+            android:name=".OutfitMoreJacket"
+            android:label="OutfitMoreJacket" />
+        <activity android:name=".Account"/>
+
+        <activity
+            android:name=".Meow"
+            android:label="Meow">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+            </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 </manifest>

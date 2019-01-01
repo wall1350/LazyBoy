@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
@@ -29,4 +30,5 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.youth.banner:banner:1.4.10'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.google.firebase:firebase-auth:16.0.1'
 }

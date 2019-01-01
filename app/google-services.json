@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "591637415038",
+    "firebase_url": "https://lazyboy-ab4ed.firebaseio.com",
+    "project_id": "lazyboy-ab4ed",
+    "storage_bucket": "lazyboy-ab4ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591637415038:android:71f413b53b5b90e7",
+        "android_client_info": {
+          "package_name": "com.example.jesuiswilliam.lazyboy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591637415038-bbmt84dofn5l41ig2ii2o0djgplsenpr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jesuiswilliam.lazyboy",
+            "certificate_hash": "0a83bae0f5e37b20283e6d7e79e4b6ada0113142"
+          }
+        },
+        {
+          "client_id": "591637415038-0jdlgje199lghcf4d5v8rubbm3485bpu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgrp6IUmqaXh8CU-E-exo5MnMInOtNPu0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591637415038-0jdlgje199lghcf4d5v8rubbm3485bpu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
