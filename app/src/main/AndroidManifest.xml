@@ -24,25 +24,25 @@
         </activity>
         <activity
             android:name=".Test"
-            android:label="Test" />
+            android:label="" />
         <activity
             android:name=".OutfitRelax"
-            android:label="OutfitRelax" />
+            android:label="" />
         <activity
             android:name=".Webview_Vc"
-            android:label="Webview_Vc" />
+            android:label="" />
         <activity
             android:name=".ClothingWeb"
-            android:label="ClothingWeb" />
+            android:label="" />
         <activity
             android:name=".ImgOutfitRelax"
-            android:label="ImgOutfitRelax" />
+            android:label="" />
         <activity
             android:name=".OutfitJacket"
-            android:label="OutfitJacket" />
+            android:label="" />
         <activity
             android:name=".OutfitMoreJacket"
-            android:label="OutfitMoreJacket" />
+            android:label="" />
         <activity android:name=".Account"/>
 
         <activity

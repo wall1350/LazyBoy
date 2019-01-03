@@ -16,50 +16,56 @@
             android:id="@+id/btnJob"
             android:layout_width="150dp"
             android:layout_height="200dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/job"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.106"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnGen"
-            app:layout_constraintVertical_bias="0.576" />
+            app:layout_constraintTop_toBottomOf="@+id/btnRelax"
+            app:layout_constraintVertical_bias="0.414" />
 
         <ImageButton
             android:id="@+id/btnRelax"
-            android:layout_width="150dp"
+            android:layout_width="153dp"
             android:layout_height="200dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
             android:adjustViewBounds="true"
             android:background="@drawable/relax"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.106"
+            app:layout_constraintHorizontal_bias="0.112"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.241" />
+            app:layout_constraintVertical_bias="0.052" />
 
         <ImageButton
             android:id="@+id/btnGen"
             android:layout_width="150dp"
             android:layout_height="200dp"
+            android:layout_marginStart="8dp"
             android:background="@drawable/gen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.525"
-            app:layout_constraintStart_toEndOf="@+id/btnRelax"
+            app:layout_constraintHorizontal_bias="0.876"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.241" />
+            app:layout_constraintVertical_bias="0.051" />
 
         <ImageButton
             android:id="@+id/btnStreet"
             android:layout_width="150dp"
             android:layout_height="200dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/street"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.525"
-            app:layout_constraintStart_toEndOf="@+id/btnJob"
+            app:layout_constraintHorizontal_bias="0.876"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnGen"
-            app:layout_constraintVertical_bias="0.576" />
+            app:layout_constraintVertical_bias="0.414" />
     </android.support.constraint.ConstraintLayout>
 
 </RelativeLayout>

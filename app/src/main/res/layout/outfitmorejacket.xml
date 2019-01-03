@@ -1,6 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="西裝外套"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:text="一件好的西裝外套，可以搭配衣櫥裡面的各項單品度過春夏秋冬，不但可以應用在各種正式場合，還可以搭配帽T、運動鞋營造休閒感，是男生絕對不能少的單品。" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.534">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="126dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/outfitjacket1"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="177dp" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="124dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/outfitjacket2"
+                    tools:layout_editor_absoluteX="244dp"
+                    tools:layout_editor_absoluteY="177dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="172dp"
+                app:srcCompat="@drawable/outfitjacket3" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.534">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="126dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/outfitjacket4"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="177dp" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="124dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/outfitjacket5"
+                    tools:layout_editor_absoluteX="244dp"
+                    tools:layout_editor_absoluteY="177dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
