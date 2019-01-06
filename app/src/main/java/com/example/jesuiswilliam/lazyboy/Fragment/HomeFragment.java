@@ -18,6 +18,7 @@ import com.example.jesuiswilliam.lazyboy.GlideImageLoader;
 import com.example.jesuiswilliam.lazyboy.OutfitRelax;
 import com.example.jesuiswilliam.lazyboy.R;
 import com.example.jesuiswilliam.lazyboy.Test;
+import com.example.jesuiswilliam.lazyboy.Webview_Vc;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 
@@ -50,7 +51,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(getActivity(),Test.class);
+                intent.setClass(getActivity(),Webview_Vc.class);
                 startActivity(intent);
                 //getActivity().finish();
             }

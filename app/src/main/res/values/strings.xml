@@ -3,4 +3,17 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="showtext_when_upate">輸入文字，跟大家介紹你的穿搭吧! \n（100字內）</string>
+    <string name="showtext_when_upate2">
+        1. 參賽者限定為「男性」\n
+    2. 照片中的穿搭者須為自己本人\n
+        （嚴禁盜用他人照片）\n
+    3. 同場比賽請勿重複報名\n
+    4. 嚴禁一人多帳號參與活動\n
+    \n
+    以上任一項違背遭舉報者 \n
+        主辦單位有權取消參賽資格\n
+
+    </string>
+
 </resources>

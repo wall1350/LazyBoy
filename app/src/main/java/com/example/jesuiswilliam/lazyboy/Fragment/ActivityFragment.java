@@ -20,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.jesuiswilliam.lazyboy.Activity_files.Update_Pic;
+import com.example.jesuiswilliam.lazyboy.Activity_files.Vote;
 import com.example.jesuiswilliam.lazyboy.MainActivity;
 import com.example.jesuiswilliam.lazyboy.R;
 import com.example.jesuiswilliam.lazyboy.Test;
@@ -30,6 +32,7 @@ public class ActivityFragment extends Fragment {
     private TextView t,t2;
     private LinearLayout linear_Activity ;//主體的佈局layout
     private ConstraintLayout con_Activity;
+    private Button vote , update;
 
     @Nullable
     @Override
@@ -48,6 +51,30 @@ public class ActivityFragment extends Fragment {
         i.setImageResource(R.mipmap.activity_date);
         t = view2.findViewById(R.id.textview_title);
         t2 = view2.findViewById(R.id.textView_content);
+
+
+        update = view2.findViewById(R.id.update_bt);
+        vote = view2.findViewById(R.id.vote_bt);
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(),Update_Pic.class);
+                startActivity(intent);
+                //getActivity().finish();
+            }
+        });
+        vote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(),Vote.class);
+                startActivity(intent);
+                //getActivity().finish();
+            }
+        });
+
+
         t.setText("穿搭比賽：約會情境");
         t2.setText("今天高中的暗戀對象主動傳訊息約你到充滿共同回憶的咖啡店聊天，不知道她要和自己說什麼呢？\n" +
                 "再次面對青春悸動的你，該怎麼樣才能給久違的對方留下帥氣又不至於疏遠的好印象？\n" +

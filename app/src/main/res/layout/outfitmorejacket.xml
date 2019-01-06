@@ -31,13 +31,13 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:id="@+id/editText2"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:ems="10"
+                android:layout_height="141dp"
                 android:inputType="textMultiLine"
-                android:text="一件好的西裝外套，可以搭配衣櫥裡面的各項單品度過春夏秋冬，不但可以應用在各種正式場合，還可以搭配帽T、運動鞋營造休閒感，是男生絕對不能少的單品。" />
+                android:text="一件好的西裝外套，可以搭配衣櫥裡面的各項單品度過春夏秋冬，不但可以應用在各種正式場合，還可以搭配帽T、運動鞋營造休閒感，是男生絕對不能少的單品。"
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
