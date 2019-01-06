@@ -44,19 +44,26 @@ public class Update_Pic extends AppCompatActivity {
     private boolean thisGuyCanUpate = true;
     private Button update;
     private ImageButton imageButton;
-    public static final int TAKE_PHOTO = 111;
+
     //保存 照片的目录
     private String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "mms";
     private File photo_file = new File(path);
     private String photoPath;
-    private static final int MY_CAMERA_REQUEST_CODE = 100;
     static int REQUEST_READ_EXTERNAL_STORAGE = 0;
     static boolean read_external_storage_granted = false;
     private final int ACTION_PICK_PHOTO = 1;
+    private String base64;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update);
+        imageButton = (ImageButton)findViewById(R.id.imageButton1);
+        update = (Button) findViewById(R.id.update_bt);
+
+        if(!thisGuyCanUpate){
+            update.setEnabled(false);
+            update.setText("您已經上傳過了");
+        }
 
         if (ContextCompat.checkSelfPermission(Update_Pic.this, Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -68,26 +75,15 @@ public class Update_Pic extends AppCompatActivity {
             read_external_storage_granted = true;
         }
 
-
-        imageButton = (ImageButton)findViewById(R.id.imageButton1);
-
-        update = (Button) findViewById(R.id.update_bt);
-        if(!thisGuyCanUpate){
-            update.setEnabled(false);
-            update.setText("您已經上傳過了");
-        }
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //takePhoto();
-
                 if (read_external_storage_granted) {
                     Intent intent = new Intent(Intent.ACTION_PICK);
                     intent.setType("image/*");
                     startActivityForResult(intent, ACTION_PICK_PHOTO);
                 } else {
                     Log.i("read_photos", "read_external_storage_granted=0");
-
                 }
             }
         });
@@ -104,33 +100,13 @@ public class Update_Pic extends AppCompatActivity {
             }
         }
     }
-
-
     public void sendTocloud(View view){
         Toast toast = Toast.makeText(Update_Pic.this,
                 "成功", Toast.LENGTH_LONG);
         //顯示Toast
         toast.show();
     }
-    public void button_Action(){
-        takePhoto();
-    }
-
-    public void takePhoto() {
-
-        Intent captureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-        if (!photo_file.exists()) {
-            photo_file.mkdirs();
-        }
-        photo_file = new File(path, "/temp.jpg");
-        photoPath = path + "/temp.jpg";
-        if (photo_file != null) {
-            captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photo_file));
-            startActivityForResult(captureIntent, TAKE_PHOTO);
-        }
-    }
-
+    //以下參考蔡主任教的程式碼
     @Override
     protected void onActivityResult(int requeestCode, int resultCode, Intent data) {
         super.onActivityResult(requeestCode, resultCode, data);
@@ -171,7 +147,9 @@ public class Update_Pic extends AppCompatActivity {
                 rotate90.postRotate(orientation);
 
                 Bitmap originalBitmap = rotateBitmap(temp, orientation);
+
                 imageButton.setImageBitmap(originalBitmap);
+                base64 = BitmapToBase64Util.bitmapToBase64(originalBitmap);
             } else {
                 Log.i("data", "originalBitmap is empty");
             }
@@ -218,23 +196,5 @@ public class Update_Pic extends AppCompatActivity {
             return null;
         }
     }
-
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString("photoPath", photoPath);
-        Log.d(TAG, "onSaveInstanceState");
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        if (TextUtils.isEmpty(photoPath)) {
-            photoPath = savedInstanceState.getString("photoPath");
-        }
-        Log.d(TAG, "onRestoreInstanceState");
-    }
-
 }
 
