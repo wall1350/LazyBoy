@@ -1,4 +1,4 @@
-package com.example.jesuiswilliam.lazyboy;
+package com.example.jesuiswilliam.lazyboy.Function_class;
 
 import android.widget.ImageView;
 

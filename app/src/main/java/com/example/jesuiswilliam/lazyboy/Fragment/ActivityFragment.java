@@ -1,17 +1,12 @@
 package com.example.jesuiswilliam.lazyboy.Fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +15,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+
 import com.example.jesuiswilliam.lazyboy.Activity_files.Update_Pic;
 import com.example.jesuiswilliam.lazyboy.Activity_files.Vote;
-import com.example.jesuiswilliam.lazyboy.MainActivity;
 import com.example.jesuiswilliam.lazyboy.R;
-import com.example.jesuiswilliam.lazyboy.Test;
 
 public class ActivityFragment extends Fragment {
     private View view,view2 ;//view1是主體,view2是卡片

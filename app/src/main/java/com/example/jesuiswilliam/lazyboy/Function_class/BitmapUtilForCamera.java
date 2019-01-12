@@ -1,4 +1,4 @@
-package com.example.jesuiswilliam.lazyboy.Activity_files;
+package com.example.jesuiswilliam.lazyboy.Function_class;
 
 
 import android.annotation.SuppressLint;
@@ -14,7 +14,7 @@ import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.util.Base64;
-import android.util.*;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;

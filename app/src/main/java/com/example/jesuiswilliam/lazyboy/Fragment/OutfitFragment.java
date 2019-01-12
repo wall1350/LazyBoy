@@ -3,22 +3,19 @@ package  com.example.jesuiswilliam.lazyboy.Fragment;
 
 import android.os.Bundle;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.content.Intent;
+
+import com.example.jesuiswilliam.lazyboy.Outfit.OutfitItem;
+import com.example.jesuiswilliam.lazyboy.Outfit.OutfitOutfit;
 import com.example.jesuiswilliam.lazyboy.R;
 import java.util.ArrayList;
 import java.util.List;
-import com.example.jesuiswilliam.lazyboy.*;//加這一句，因為我分了資料夾
 
 public class OutfitFragment extends Fragment {
     private View view;

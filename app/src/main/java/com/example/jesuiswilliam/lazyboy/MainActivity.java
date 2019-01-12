@@ -1,24 +1,29 @@
 package com.example.jesuiswilliam.lazyboy;
 
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
+import android.view.KeyEvent;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.example.jesuiswilliam.lazyboy.Fragment.AccountFragment;
 import com.example.jesuiswilliam.lazyboy.Fragment.ActivityFragment;
 import com.example.jesuiswilliam.lazyboy.Fragment.HomeFragment;
 import com.example.jesuiswilliam.lazyboy.Fragment.InfoFragment;
 import com.example.jesuiswilliam.lazyboy.Fragment.OutfitFragment;
-import com.example.jesuiswilliam.lazyboy.Fragment.TestFragment;
+import com.example.jesuiswilliam.lazyboy.Function_class.AppManager;
+
+import java.util.Stack;
 
 
 public class MainActivity extends AppCompatActivity
@@ -36,7 +41,7 @@ public class MainActivity extends AppCompatActivity
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
-
+        AppManager.getAppManager().addActivity(this);
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -49,15 +54,6 @@ public class MainActivity extends AppCompatActivity
             case R.id.navigation_activity:
 
                 fragment = new ActivityFragment();
-//
-//                linear_Activity = (LinearLayout)findViewById(R.id.linear_Activity);
-//                con_Activity = (ConstraintLayout)findViewById(R.id.mConstraintLayout_Activity);
-//                CardView c1 = new CardView(this);
-//                TextView t1 = new TextView(this);
-//                t1.setText("TEXT");
-//                c1.addView(t1);
-//                // linear_Activity.addView(c1);
-//                con_Activity.addView(c1);
 
 
                 break;
@@ -90,4 +86,37 @@ public class MainActivity extends AppCompatActivity
         }
         return false;
     }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) { // 攔截返回鍵
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("確認視窗")
+                    .setMessage("確定要結束應用程式嗎?")
+                    .setPositiveButton("確定",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                                    int which) {
+
+                                    AppManager.getAppManager().AppExit(MainActivity.this);
+                                    //完全關閉程式
+                                }
+                            })
+                    .setNegativeButton("取消",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                                    int which) {
+                                    // TODO Auto-generated method stub
+
+                                }
+                            }).show();
+        }
+        return true;
+    }
 }
+

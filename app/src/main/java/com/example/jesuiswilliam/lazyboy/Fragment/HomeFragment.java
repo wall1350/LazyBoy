@@ -6,19 +6,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.jesuiswilliam.lazyboy.GlideImageLoader;
-import com.example.jesuiswilliam.lazyboy.OutfitRelax;
+import com.example.jesuiswilliam.lazyboy.Function_class.GlideImageLoader;
+import com.example.jesuiswilliam.lazyboy.Outfit.OutfitRelax;
 import com.example.jesuiswilliam.lazyboy.R;
-import com.example.jesuiswilliam.lazyboy.Test;
-import com.example.jesuiswilliam.lazyboy.Webview_Vc;
+import com.example.jesuiswilliam.lazyboy.Function_class.Webview_Vc;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 

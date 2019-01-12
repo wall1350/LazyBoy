@@ -7,36 +7,44 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 
 import android.graphics.BitmapFactory;
-import android.graphics.Camera;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jesuiswilliam.lazyboy.R;
+import com.example.jesuiswilliam.lazyboy.Function_class.BitmapToBase64Util;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.*;
+import com.google.firebase.storage.UploadTask;
 
 
 public class Update_Pic extends AppCompatActivity {
@@ -44,11 +52,29 @@ public class Update_Pic extends AppCompatActivity {
     private boolean thisGuyCanUpate = true;
     private Button update;
     private ImageButton imageButton;
-
+    private Bitmap originalBitmap;
+    private TextView update_text;
     //保存 照片的目录
     private String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "mms";
-    private File photo_file = new File(path);
-    private String photoPath;
+
+
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    FirebaseUser user = mAuth.getCurrentUser();
+    String userName = user.getUid();
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    // Create a storage reference from our app
+    StorageReference storageRef = storage.getReference();
+    Uri file;
+    TimeStamp ts = new TimeStamp();
+    String dateString = ts.swapDateToStr();
+
+
+    // Create a reference to 'images/userName+dateString+.jpg'
+    StorageReference mountainImagesRef = storageRef.child("images/"+userName+"dateString.jpg");
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("messages/"+userName);
+
+
     static int REQUEST_READ_EXTERNAL_STORAGE = 0;
     static boolean read_external_storage_granted = false;
     private final int ACTION_PICK_PHOTO = 1;
@@ -59,7 +85,7 @@ public class Update_Pic extends AppCompatActivity {
         setContentView(R.layout.update);
         imageButton = (ImageButton)findViewById(R.id.imageButton1);
         update = (Button) findViewById(R.id.update_bt);
-
+        update_text = (TextView)findViewById(R.id.update_text);
         if(!thisGuyCanUpate){
             update.setEnabled(false);
             update.setText("您已經上傳過了");
@@ -101,10 +127,65 @@ public class Update_Pic extends AppCompatActivity {
         }
     }
     public void sendTocloud(View view){
-        Toast toast = Toast.makeText(Update_Pic.this,
-                "成功", Toast.LENGTH_LONG);
+
+        Toast toast2 = Toast.makeText(Update_Pic.this,
+                "上傳中", Toast.LENGTH_SHORT);
         //顯示Toast
-        toast.show();
+        toast2.show();
+        //上傳
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        originalBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] baosdata = baos.toByteArray();
+
+        // Write a message to the database
+
+        UploadTask uploadTask = mountainImagesRef.putBytes(baosdata);
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                Toast toast = Toast.makeText(Update_Pic.this,
+                        "失敗", Toast.LENGTH_LONG);
+                //顯示Toast
+                toast.show();
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Toast toast = Toast.makeText(Update_Pic.this,
+                        "成功", Toast.LENGTH_LONG);
+                //顯示Toast
+                toast.show();
+                finish();
+
+            }
+        });
+
+        Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+            @Override
+            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                if (!task.isSuccessful()) {
+                    throw task.getException();
+                }
+
+                // Continue with the task to get the download URL
+                return mountainImagesRef.getDownloadUrl();
+            }
+        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+            @Override
+            public void onComplete(@NonNull Task<Uri> task) {
+                if (task.isSuccessful()) {
+                    Uri downloadUri = task.getResult();
+                    myRef.child("user email").setValue(user.getEmail());
+                    myRef.child("date").setValue(dateString);
+                    myRef.child("description").setValue(update_text.getText().toString());
+                    myRef.child("photo uri").setValue(downloadUri.toString());
+                } else {
+                    // Handle failures
+                    // ...
+                }
+            }
+        });
+
     }
     //以下參考蔡主任教的程式碼
     @Override
@@ -132,6 +213,7 @@ public class Update_Pic extends AppCompatActivity {
             options.inSampleSize = 2;
             Bitmap temp = BitmapFactory.decodeFile(picturePath, options);
 
+
             int orientation = 0;
             try {
                 ExifInterface imgParams = new ExifInterface(picturePath);
@@ -146,11 +228,14 @@ public class Update_Pic extends AppCompatActivity {
                 Matrix rotate90 = new Matrix();
                 rotate90.postRotate(orientation);
 
-                Bitmap originalBitmap = rotateBitmap(temp, orientation);
+                originalBitmap = rotateBitmap(temp, orientation);
 
                 imageButton.setImageBitmap(originalBitmap);
-                base64 = BitmapToBase64Util.bitmapToBase64(originalBitmap);
-            } else {
+
+
+                //base64 = BitmapToBase64Util.bitmapToBase64(originalBitmap);
+            }
+            else {
                 Log.i("data", "originalBitmap is empty");
             }
         }
@@ -196,5 +281,19 @@ public class Update_Pic extends AppCompatActivity {
             return null;
         }
     }
+}
+
+
+ class TimeStamp {
+    private long timeStamp = System.currentTimeMillis();
+    public String printTimeStamp(){
+        return "TimeStamp: " + String.valueOf(timeStamp);
+    }
+    public String swapDateToStr(){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日HH時mm分ss秒");
+        return "Date: " + format.format(new Date(timeStamp));
+    }
+
+
 }
 

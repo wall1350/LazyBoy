@@ -1,11 +1,13 @@
-package com.example.jesuiswilliam.lazyboy;
+package com.example.jesuiswilliam.lazyboy.Outfit;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Button;
+
+import com.example.jesuiswilliam.lazyboy.Function_class.PageView;
+import com.example.jesuiswilliam.lazyboy.R;
 
 public class OutfitItem extends PageView {
 

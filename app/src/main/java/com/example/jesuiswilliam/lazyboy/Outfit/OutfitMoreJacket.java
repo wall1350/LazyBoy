@@ -1,4 +1,5 @@
-package com.example.jesuiswilliam.lazyboy;
+package com.example.jesuiswilliam.lazyboy.Outfit;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,56 +9,35 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 
 import com.example.jesuiswilliam.lazyboy.Fragment.AccountFragment;
 import com.example.jesuiswilliam.lazyboy.Fragment.ActivityFragment;
-import com.example.jesuiswilliam.lazyboy.Fragment.HomeFragment;
 import com.example.jesuiswilliam.lazyboy.Fragment.InfoFragment;
 import com.example.jesuiswilliam.lazyboy.Fragment.OutfitFragment;
-import com.example.jesuiswilliam.lazyboy.Fragment.TestFragment;
-
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+import com.example.jesuiswilliam.lazyboy.MainActivity;
+import com.example.jesuiswilliam.lazyboy.R;
 
 
-public class ImgOutfitRelax extends AppCompatActivity
+public class OutfitMoreJacket extends AppCompatActivity
         implements  BottomNavigationView.OnNavigationItemSelectedListener{
 
-    private ImageView imgRelax;
-    private Button btnweb;
+
 
     private View mBarView;
     // 主Layout的容器加载子Layout的View
     private ConstraintLayout mConstraintLayout;
-    private Fragment testFragment = new TestFragment();
+    //private Fragment testFragment = new TestFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.imgoutfitrelax);
+        setContentView(R.layout.outfitmorejacket);
         //loadFragment(testFragment);
         //BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         //navigation.setOnNavigationItemSelectedListener(this);
-        imgRelax = findViewById(R.id.imgRelax);
-
-        btnweb = findViewById(R.id.btnWeb);
-
-        btnweb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                Intent intent = new Intent();
-                intent.setClass(ImgOutfitRelax.this,ClothingWeb.class);
-                startActivity(intent);
-
-                ImgOutfitRelax.this.finish();
-            }
-        });
 
     }
+
 
     //    private boolean loadFragment(Fragment fragment) {
 //        //switching fragment
@@ -102,3 +82,4 @@ public class ImgOutfitRelax extends AppCompatActivity
         return true;
     }
 }
+

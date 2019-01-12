@@ -1,4 +1,4 @@
-package com.example.jesuiswilliam.lazyboy.Activity_files;
+package com.example.jesuiswilliam.lazyboy.Function_class;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

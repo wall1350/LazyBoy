@@ -1,12 +1,9 @@
 package com.example.jesuiswilliam.lazyboy.Activity_files;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -15,11 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.jesuiswilliam.lazyboy.Fragment.HomeFragment;
 import com.example.jesuiswilliam.lazyboy.R;
-import com.example.jesuiswilliam.lazyboy.Webview_Vc;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static android.view.View.INVISIBLE;
@@ -34,9 +30,14 @@ public class Vote extends AppCompatActivity {
     private Button send,youCannotVote;
     private TextView[] textView_array;
     private ArrayList<Double> arrayList =new ArrayList();
+    private ArrayList<String> downLoadedText =new ArrayList();
     private LinearLayout lin_vote;
     private int index=0,counter=0,howManyOption=3;
     private boolean thisGuyCanVote = true;
+    // Create a storage reference from our app
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference storageRef = storage.getReference().child("images");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +77,7 @@ public class Vote extends AppCompatActivity {
             imageView_array_check[counter]=view_array[counter].findViewById(R.id.cardlayout_check);
             textView_array[counter] = view_array[counter].findViewById(R.id.card_text);
             String temp = "001  \n  男人不壞女人不愛  \n 約會就該穿出自我的個性！";
+
             textView_array[counter].setText(temp);
             button_array[counter] = view_array[counter].findViewById(R.id.cardlayout_button);
             //自定義按鈕事件

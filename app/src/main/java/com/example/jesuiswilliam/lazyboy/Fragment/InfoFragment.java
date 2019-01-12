@@ -1,7 +1,5 @@
 package com.example.jesuiswilliam.lazyboy.Fragment;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,20 +8,17 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import com.example.jesuiswilliam.lazyboy.*;//加這一句，因為我分了資料夾
+
 import com.example.jesuiswilliam.lazyboy.Info.HotInfo;
 import com.example.jesuiswilliam.lazyboy.Info.LatestInfo;
 import com.example.jesuiswilliam.lazyboy.Info.TeachInfo;
 import com.example.jesuiswilliam.lazyboy.R;
-import com.example.jesuiswilliam.lazyboy.Test;
 
 import java.util.ArrayList;
 import java.util.List;

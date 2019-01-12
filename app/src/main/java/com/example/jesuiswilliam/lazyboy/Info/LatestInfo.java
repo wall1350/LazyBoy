@@ -2,7 +2,6 @@ package com.example.jesuiswilliam.lazyboy.Info;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.constraint.ConstraintLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -10,8 +9,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.jesuiswilliam.lazyboy.*;//加這一句，因為我分了資料夾
+import com.example.jesuiswilliam.lazyboy.Function_class.PageView;
+import com.example.jesuiswilliam.lazyboy.Function_class.Webview_Vc;
 
-public class LatestInfo extends PageView{
+public class LatestInfo extends PageView {
     private View view1,view2,view3 ;//view1,2,3是卡片
     private ImageView i1,i2,i3;//給view2卡片的圖
     private Button b1,b2,b3;//給view2卡片的按鈕
